@@ -1,0 +1,11 @@
+https://blog.csdn.net/GoForwardToStep/article/details/77035287
+
+void drawview::zoom(float scaleFactor)
+{
+     setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    qreal factor = transform().scale(scaleFactor, scaleFactor).mapRect(QRectF(0, 0, 1, 1)).width();
+     if (factor < 0.01 || factor > 2000)
+         return;
+     scale(scaleFactor, scaleFactor);
+ 
+}
